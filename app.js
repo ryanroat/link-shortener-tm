@@ -9,6 +9,10 @@ connectDB();
 
 app.use(express.json({ extended: false }));
 
+// define Routes
+app.use('/', require('./routes/index'));
+app.use('/api/url', require('./routes/url'));
+
 const localPort = 5002;
 
 app.listen(process.env.PORT || localPort, () =>
