@@ -1,6 +1,11 @@
 const express = require('express');
+const connectDB = require('./config/db');
 
+// start express server
 const app = express();
+
+// connect MongoDB Cloud Atlas database
+connectDB();
 
 app.use(express.json({ extended: false }));
 
