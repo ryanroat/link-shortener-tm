@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const shortId = require('shortid');
+const config = require('config');
 
 const shortUrlSchema = new mongoose.Schema({
     target: {
@@ -8,7 +9,8 @@ const shortUrlSchema = new mongoose.Schema({
     },
     domainRoot: {
         type: String,
-        required: true
+        required: true,
+        default: config.get('domainRoot')
     },
     short: {
         type: String,

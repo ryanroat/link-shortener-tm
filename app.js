@@ -1,5 +1,6 @@
 const express = require('express');
 const connectDB = require('./config/db');
+const shortUrl = require('./models/shortUrl');
 
 // start express server
 const app = express();
@@ -7,13 +8,21 @@ const app = express();
 // connect MongoDB Cloud Atlas database
 connectDB();
 
+app.set('view engine', 'ejs');
+app.use(express.urlencoded({ extended: false }));
+
 app.use(express.json({ extended: false }));
 
 // define Routes
-app.use('/', require('./routes/index'));
+// app.use('/', require('./routes/index'));
 app.use('/api/url', require('./routes/url'));
 
 const localPort = 5002;
+
+app.get('/', async (req, res) => {
+    const shortUrls = await shortUrl.find();
+    res.render('index', { shortUrls });
+});
 
 app.listen(process.env.PORT || localPort, () =>
     // eslint-disable-next-line no-console

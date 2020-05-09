@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Link Shortener WDS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY="
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Link Shortener</h1>
+      <form action="/api/url/shorten" method="post">
+        <label for="target">Url</label>
+        <input type="url" name="target" id="target" />
+        <button class="button-primary" type="submit">Shorten</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Resource</th>
+            <th>Short URL</th>
+            <th>clicks</th>
+            <th>created</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% shortUrls.forEach(shortUrl => { %>
+          <tr>
+            <td>
+              <a href="<%= shortUrl.target %>"> <%= shortUrl.target %></a>
+            </td>
+            <td><a href="<%= shortUrl.short %>"> <%= shortUrl.short %></a></td>
+            <td><%= shortUrl.clicks %></td>
+            <td><%= shortUrl.createdDate %></td>
+          </tr>
+          <% }); %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
