@@ -24,6 +24,16 @@ app.get('/', async (req, res) => {
     res.render('index', { shortUrls });
 });
 
+app.get('/:ref', async (req, res) => {
+    const redirect = await shortUrl.findOne({ short: req.params.ref });
+    if (redirect == null) return res.sendStatus(404);
+
+    redirect.clicks++;
+    redirect.save();
+
+    res.redirect(redirect.target);
+});
+
 app.listen(process.env.PORT || localPort, () =>
     // eslint-disable-next-line no-console
     console.log(`Server started on port ${localPort}.`)
