@@ -37,7 +37,7 @@
             </td>
             <td><a href="<%= shortUrl.short %>"> <%= shortUrl.short %></a></td>
             <td><%= shortUrl.clicks %></td>
-            <td><%= shortUrl.createdDate %></td>
+            <td><%= shortUrl.createdDate.toLocaleString() %></td>
           </tr>
           <% }); %>
         </tbody>
