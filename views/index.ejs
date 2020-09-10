@@ -27,6 +27,7 @@
             <th>Short URL</th>
             <th>clicks</th>
             <th>created</th>
+            <th>delete?</th>
           </tr>
         </thead>
         <tbody>
@@ -38,6 +39,7 @@
             <td><a href="<%= shortUrl.short %>"> <%= shortUrl.short %></a></td>
             <td><%= shortUrl.clicks %></td>
             <td><%= shortUrl.createdDate.toLocaleString() %></td>
+            <td>X</td>
           </tr>
           <% }); %>
         </tbody>
