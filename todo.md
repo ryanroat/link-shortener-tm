@@ -1,6 +1,8 @@
 # ideas for features
 
 * simple dark mode
+* parse input targets into urls
+* open clicked short urls in new tabs
 * parse stored with URL()
 * delete urls
 * edit url and/or short url
