@@ -1,9 +1,10 @@
 # ideas for features
 
 * simple dark mode
+* parse stored with URL()
+* delete urls
 * edit url and/or short url
 * deploy to cloud
-* delete urls
 * store date of most recent click
 * sort by
   * alpha of url
