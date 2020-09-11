@@ -36,7 +36,7 @@
           <% shortUrls.forEach(shortUrl => { %>
           <tr>
             <td>
-              <a href="<%= shortUrl.target %>"> <%= shortUrl.target %></a>
+              <a href="<%= shortUrl.target %>"> <%= new URL(shortUrl.target).hostname %><%= new URL(shortUrl.target).pathname %></a>
             </td>
             <td><input class="button-primary" type="button" value="Edit"></td>
             <td><a href="<%= shortUrl.short %>"> <%= shortUrl.short %></a></td>
