@@ -39,10 +39,10 @@
           <% shortUrls.forEach(shortUrl => { %>
           <tr>
             <td>
-              <a href="<%= shortUrl.target %>"> <%= new URL(shortUrl.target).hostname %><%= new URL(shortUrl.target).pathname %></a>
+              <a href="<%= shortUrl.target %>" target="_blank" rel="noreferrer noopener"> <%= new URL(shortUrl.target).hostname %><%= new URL(shortUrl.target).pathname %></a>
             </td>
             <td><input class="button-primary" type="button" value="Edit"></td>
-            <td><a href="<%= shortUrl.short %>"> <%= shortUrl.short %></a></td>
+            <td><a href="<%= shortUrl.short %>" target="_blank" rel="noreferrer noopener" > <%= shortUrl.short %></a></td>
             <td><%= shortUrl.clicks %></td>
             <td><%= shortUrl.createdDate.toLocaleString() %></td>
             <td>

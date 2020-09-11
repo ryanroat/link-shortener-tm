@@ -1,8 +1,7 @@
 # ideas for features
 
-* simple dark mode
+* remember darkmode status in local storage
 * parse input targets into urls
-* open clicked short urls in new tabs
 * parse stored with URL()
 * delete urls
 * edit url and/or short url
@@ -17,3 +16,12 @@
   * store created by info
   * user roles
   * delete only by user created or admin
+
+## in process
+
+* simple dark mode
+
+
+### complete
+
+* open clicked urls in new tabs
