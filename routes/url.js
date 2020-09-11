@@ -47,10 +47,11 @@ router.post('/shorten', async (req, res) => {
 // @desc    Test post of delete button route
 
 router.post('/delete', async (req, res) => {
-  const shortUrls = await shortUrl.find();
+  const url = await shortUrl.findOne({ short: req.body.delete });
   console.log('delete requested');
-  console.log(req.body.delete);
-  res.render('delete', { item: req.body.delete });
+
+  console.log(url.target);
+  res.render('delete', { url });
 });
 
 module.exports = router;
