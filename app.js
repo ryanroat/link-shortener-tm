@@ -14,6 +14,12 @@ const localPort = 5002;
 // connect MongoDB Cloud Atlas database
 connectDB();
 
+// express static files (CSS, etc)
+
+app.use(express.static('public'));
+
+// express view engine
+
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 
