@@ -29,12 +29,6 @@ app.get('/', async (req, res) => {
   res.render('index', { shortUrls });
 });
 
-// app.get('/delete', async (req, res) => {
-//   const shortUrls = await shortUrl.find();
-//   // console.log('delete requested');
-//   res.render('delete', { shortUrls });
-// });
-
 app.get('/:ref', async (req, res) => {
   const redirect = await shortUrl.findOne({ short: req.params.ref });
   if (redirect == null) return res.sendStatus(404);
