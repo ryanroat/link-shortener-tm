@@ -1,6 +1,7 @@
 # ideas for features
 
-* custom short url
+* simple dark mode
+* edit url and/or short url
 * deploy to cloud
 * delete urls
 * store date of most recent click
