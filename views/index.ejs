@@ -43,9 +43,8 @@
             <td><%= shortUrl.clicks %></td>
             <td><%= shortUrl.createdDate.toLocaleString() %></td>
             <td>
-              <!-- <input type="submit" class="button-primary" value="X" name="delete" id="delete"> -->
-              <form  action="/api/url/delete" method="get">
-                <button class="button-primary" type="submit" value="X" name="delete" id="delete">X</button>
+              <form action="/api/url/delete" method="post">
+                <button class="button-primary" type="submit" value="<%= shortUrl.short %>" name="delete" id="delete">X</button>
               </form>
             </td>
           </tr>

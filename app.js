@@ -22,7 +22,6 @@ app.use(express.json({ extended: false }));
 // define Routes
 // app.use('/', require('./routes/index'));
 app.use('/api/url', require('./routes/url'));
-// app.use('/api/url', require('./routes/delete'));
 
 app.get('/', async (req, res) => {
   const shortUrls = await shortUrl.find();

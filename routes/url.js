@@ -43,13 +43,14 @@ router.post('/shorten', async (req, res) => {
   // check valid target already in DB
 });
 
-// @route   GET /api/url/delete
-// @desc    Test get of delete button
+// @route   POST /api/url/delete
+// @desc    Test post of delete button route
 
-router.get('/delete', async (req, res) => {
+router.post('/delete', async (req, res) => {
   const shortUrls = await shortUrl.find();
   console.log('delete requested');
-  res.render('delete', { shortUrls });
+  console.log(req.body.delete);
+  res.render('delete', { item: req.body.delete });
 });
 
 module.exports = router;
