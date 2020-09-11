@@ -22,11 +22,18 @@ app.use(express.json({ extended: false }));
 // define Routes
 // app.use('/', require('./routes/index'));
 app.use('/api/url', require('./routes/url'));
+// app.use('/api/url', require('./routes/delete'));
 
 app.get('/', async (req, res) => {
   const shortUrls = await shortUrl.find();
   res.render('index', { shortUrls });
 });
+
+// app.get('/delete', async (req, res) => {
+//   const shortUrls = await shortUrl.find();
+//   // console.log('delete requested');
+//   res.render('delete', { shortUrls });
+// });
 
 app.get('/:ref', async (req, res) => {
   const redirect = await shortUrl.findOne({ short: req.params.ref });
