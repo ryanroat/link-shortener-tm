@@ -24,6 +24,7 @@
         <thead>
           <tr>
             <th>Resource</th>
+            <th></th>
             <th>Short URL</th>
             <th>clicks</th>
             <th>created</th>
@@ -36,10 +37,11 @@
             <td>
               <a href="<%= shortUrl.target %>"> <%= shortUrl.target %></a>
             </td>
+            <td><input class="button-primary" type="button" value="Edit"></td>
             <td><a href="<%= shortUrl.short %>"> <%= shortUrl.short %></a></td>
             <td><%= shortUrl.clicks %></td>
             <td><%= shortUrl.createdDate.toLocaleString() %></td>
-            <td>X</td>
+            <td><input class="button-primary" type="button" value="X"></td>
           </tr>
           <% }); %>
         </tbody>
