@@ -11,7 +11,7 @@ const setDM = () => {
   } else {
     document.documentElement.classList.remove('dark-mode');
   }
-  console.log('darkmode status: ', darkmodeOn);
+  // console.log(darkmodeOn);
 };
 
 const toggleDM = () => {
@@ -22,7 +22,10 @@ const toggleDM = () => {
 
 setDM();
 const darkmode = document.querySelector('#darkmode');
-darkmode.addEventListener('click', () => {
-  // document.documentElement.classList.toggle('dark-mode');
-  toggleDM();
-});
+// console.log(darkmode);
+if (darkmode) {
+  darkmode.addEventListener('click', () => {
+    // document.documentElement.classList.toggle('dark-mode');
+    toggleDM();
+  });
+}
