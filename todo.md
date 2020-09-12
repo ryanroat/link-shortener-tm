@@ -1,6 +1,6 @@
 # ideas for features
 
-* remember darkmode status in local storage
+
 * parse input targets into urls
 * parse stored with URL()
 * delete urls
@@ -20,6 +20,7 @@
 ## in process
 
 * simple dark mode
+* remember darkmode status in local storage
 
 
 ### complete
