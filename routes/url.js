@@ -51,6 +51,8 @@ router.post('/delete', async (req, res) => {
   const url = new URL(entry.target);
   console.log('delete requested');
   console.log(url.hostname + url.pathname);
+  const deleted = await shortUrl.findOneAndDelete({ short: req.body.delete });
+  console.log(deleted);
   res.render('delete', { url });
 });
 
