@@ -1,10 +1,9 @@
 # ideas for features
 
-
+* restore just deleted item
 * parse input targets into urls
 * parse stored with URL()
 * delete urls
-* edit url and/or short url
 * deploy to cloud
 * store date of most recent click
 * sort by
@@ -19,10 +18,11 @@
 
 ## in process
 
+* edit url and/or short url
 * simple dark mode
-* remember darkmode status in local storage
 
 
 ### complete
 
+* remember darkmode status in local storage
 * open clicked urls in new tabs
