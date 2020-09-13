@@ -56,4 +56,10 @@ router.post('/delete', async (req, res) => {
   res.render('delete', { url });
 });
 
+router.post('/edit', async (req, res) => {
+  const entry = await shortUrl.findOne({ short: req.body.edit });
+  console.log('edit requested');
+  res.render('edit', { entry });
+});
+
 module.exports = router;
