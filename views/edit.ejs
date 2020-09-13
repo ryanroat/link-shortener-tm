@@ -19,7 +19,7 @@
   <a href="/">HOME</a>
   <form action="api.url/editShort" method="post">
     <label for="updateShort">Update short URL code:</label>
-    <input type="text" name="updateShort" id="updateShort" />
+    <input type="text" name="updateShort" id="updateShort" value="<%= entry.short %>"/>
     <button class="button-primary" type="submit">Update</button>
     <span class="message"></span>
   </form>
