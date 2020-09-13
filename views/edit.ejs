@@ -4,6 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit URL</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY="
+      crossorigin="anonymous"
+    />
   <link rel="stylesheet" href="../../css/darkmode.css"/>
 </head>
 <body>
@@ -11,6 +17,12 @@
   <p>target URL: <%= entry.target %></p>
   <p>short URL: <%= entry.short %></p>
   <a href="/">HOME</a>
+  <form action="api.url/editShort" method="post">
+    <label for="updateShort">Update short URL code:</label>
+    <input type="text" name="updateShort" id="updateShort" />
+    <button class="button-primary" type="submit">Update</button>
+    <span class="message"></span>
+  </form>
   <script src="../../js/darkmode.js"></script>
 </body>
 </html>
