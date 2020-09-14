@@ -10,19 +10,19 @@
       integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY="
       crossorigin="anonymous"
     />
-  <link rel="stylesheet" href="../../css/darkmode.css"/>
+  <link rel="stylesheet" href="../../../css/darkmode.css"/>
 </head>
 <body>
   <h2>EDITING</h2>
   <p>target URL: <%= entry.target %></p>
   <p>short URL: <%= entry.short %></p>
   <a href="/">HOME</a>
-  <form action="api.url/editShort" method="post">
+  <form action="/api/url/edit/<%= entry.short %>?_method=PUT" method="post">
     <label for="updateShort">Update short URL code:</label>
     <input type="text" name="updateShort" id="updateShort" value="<%= entry.short %>"/>
     <button class="button-primary" type="submit">Update</button>
     <span class="message"></span>
   </form>
-  <script src="../../js/darkmode.js"></script>
+  <script src="../../../js/darkmode.js"></script>
 </body>
 </html>

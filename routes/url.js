@@ -1,9 +1,11 @@
 /* eslint-disable linebreak-style */
 const express = require('express');
+const methodOverride = require('method-override');
 const validUrl = require('valid-url');
 // const config = require('config');
 
 const router = express.Router();
+router.use(methodOverride('_method'));
 
 const shortUrl = require('../models/shortUrl');
 
@@ -56,10 +58,36 @@ router.post('/delete', async (req, res) => {
   res.render('delete', { url });
 });
 
-router.post('/edit', async (req, res) => {
-  const entry = await shortUrl.findOne({ short: req.body.edit });
+// @route   POST /api/url/edit
+// @desc    Test post of edit button route
+
+router.post('/edit/:url', async (req, res) => {
+  const entry = await shortUrl.findOne({ short: req.params.url });
   console.log('edit requested');
   res.render('edit', { entry });
 });
+
+router.put('/edit/:url', async (req, res) => {
+  console.log('update requested');
+  console.log(req.params.url);
+  console.log(req.body);
+});
+
+/*
+// @route   POST /api/url/editShort
+// @desc    Test post of edit button route
+
+router.post('/editShort', async (req, res) => {
+  const { updateShort } = req.body;
+  console.log(updateShort);
+  const entry = await shortUrl.findOne({ short: updateShort });
+  if (entry) {
+    console.log('in use');
+    res.render('edit', { entry });
+  } else {
+    console.log('available');
+  }
+});
+*/
 
 module.exports = router;

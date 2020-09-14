@@ -21,7 +21,7 @@
         <label for="target">Url</label>
         <input type="url" name="target" id="target" />
         <button class="button-primary" type="submit">Shorten</button>
-        <span id="message"></span>
+        <span class="message"></span>
       </form>
       <table>
         <thead>
@@ -41,9 +41,12 @@
               <a href="<%= shortUrl.target %>" target="_blank" rel="noreferrer noopener"> <%= new URL(shortUrl.target).hostname %><%= new URL(shortUrl.target).pathname %></a>
             </td>
             <td>
-              <form action="/api/url/edit" method="post">
+              <form action="/api/url/edit/<%= shortUrl.short %>" method="post">
                 <button class="button-primary" type="submit" value="<%= shortUrl.short %>" name="edit" id="edit">Edit</button>
               </form>
+              <!-- <a href="/api/url/edit/<%= shortUrl.short %>">
+                <button class="button-primary" type="button" value="<%= shortUrl.short %>" name="edit" id="edit">Edit</button>
+              </a> -->
             </td>
             <td><a href="<%= shortUrl.short %>" target="_blank" rel="noreferrer noopener" > <%= shortUrl.short %></a></td>
             <td><%= shortUrl.clicks %></td>
