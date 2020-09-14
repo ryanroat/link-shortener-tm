@@ -81,7 +81,6 @@ router.put('/edit/:url', async (req, res) => {
     console.log('in use');
     // TODO: need a message to user here that new short url is not available??
     console.log(entry);
-    // res.render('edit', { entry });
     res.redirect(307, `${req.params.url}`);
   } else {
     console.log('available');
