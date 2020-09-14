@@ -67,10 +67,29 @@ router.post('/edit/:url', async (req, res) => {
   res.render('edit', { entry });
 });
 
+// @route   PUT /api/url/edit
+// @desc    Test put of edit view submit button route
+
 router.put('/edit/:url', async (req, res) => {
   console.log('update requested');
   console.log(req.params.url);
-  console.log(req.body);
+  const { updateShort } = req.body;
+  console.log(updateShort);
+  let entry = await shortUrl.findOne({ short: updateShort });
+  if (entry) {
+    console.log('in use');
+    // TODO: need a message to user here that new short url is not available??
+    console.log(entry);
+    res.render('edit', { entry });
+  } else {
+    console.log('available');
+    entry = await shortUrl.findOne({ short: req.params.url });
+    console.log(entry);
+    entry.short = updateShort;
+    await entry.save();
+    console.log('updated');
+    res.redirect('/');
+  }
 });
 
 /*
