@@ -4,12 +4,17 @@
 /* eslint-disable no-console */
 /* eslint-disable implicit-arrow-linebreak */
 const express = require('express');
+const methodOverride = require('method-override');
 const connectDB = require('./config/db');
 const shortUrl = require('./models/shortUrl');
 
 // start express server
 const app = express();
 const localPort = 5002;
+
+// method override middleware
+
+app.use(methodOverride('_method'));
 
 // connect MongoDB Cloud Atlas database
 connectDB();
