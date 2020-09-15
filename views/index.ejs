@@ -49,7 +49,7 @@
             <td><%= shortUrl.clicks %></td>
             <td><%= shortUrl.createdDate.toLocaleString() %></td>
             <td>
-              <form action="/api/url/delete" method="post">
+              <form action="/api/url/delete/<%= shortUrl.short %>" method="post">
                 <button class="button-primary" type="submit" value="<%= shortUrl.short %>" name="delete" id="delete">X</button>
               </form>
             </td>

@@ -1,6 +1,8 @@
 # ideas for features
 
 * add delete button to edit view
+  * change /delete post route to use params
+  * pass short url as param to /delete post route
 * restore just deleted item
 * parse input targets into urls
 * parse stored with URL()
@@ -18,12 +20,12 @@
 
 ## in process
 
-* delete urls
 * edit url and/or short url
-* simple dark mode
 
 
 ### complete
 
+* delete urls
 * remember darkmode status in local storage
+* simple dark mode
 * open clicked urls in new tabs
