@@ -93,21 +93,4 @@ router.put('/edit/:url', async (req, res) => {
   }
 });
 
-/*
-// @route   POST /api/url/editShort
-// @desc    Test post of edit button route
-
-router.post('/editShort', async (req, res) => {
-  const { updateShort } = req.body;
-  console.log(updateShort);
-  const entry = await shortUrl.findOne({ short: updateShort });
-  if (entry) {
-    console.log('in use');
-    res.render('edit', { entry });
-  } else {
-    console.log('available');
-  }
-});
-*/
-
 module.exports = router;

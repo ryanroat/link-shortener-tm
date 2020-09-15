@@ -3,7 +3,6 @@
 * restore just deleted item
 * parse input targets into urls
 * parse stored with URL()
-* delete urls
 * deploy to cloud
 * store date of most recent click
 * sort by
@@ -18,6 +17,7 @@
 
 ## in process
 
+* delete urls
 * edit url and/or short url
 * simple dark mode
 
