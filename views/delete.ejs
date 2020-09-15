@@ -3,12 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../../css/darkmode.css"/>
+  <title>Delete URL</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
+      integrity="sha256-2YQRJMXD7pIAPHiXr0s+vlRWA7GYJEK0ARns7k2sbHY="
+      crossorigin="anonymous"
+    />
+  <link rel="stylesheet" href="../../../css/darkmode.css"/>
 </head>
 <body>
-  <h2>DELETED <%= url.hostname %><%= url.pathname %> </h2>
+  <h2>Confirm DELETE</h2>
+  <p>target URL: <%= entry.target %></p>
+  <p>short URL: <%= entry.short %></p>
   <a href="/">HOME</a>
-  <script src="../../js/darkmode.js"></script>
+  <form action="/api/url/delete/<%= entry.short %>?_method=DELETE" method="post">
+    <!-- <label for="updateShort">Update short URL code:</label> -->
+    <!-- <input type="text" name="updateShort" id="updateShort" value="<%= entry.short %>"/> -->
+    Delete this item?
+    <button class="button-primary" type="submit">Delete</button>
+    <a href="/"><input class="button-primary" type="button" value="cancel"></a>
+  </form>
+  <span class="message"></span>
+  <script src="../../../js/darkmode.js"></script>
 </body>
 </html>

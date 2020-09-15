@@ -9,6 +9,7 @@ const router = express.Router();
 router.use(methodOverride('_method'));
 
 const shortUrl = require('../models/shortUrl');
+const { route } = require('.');
 
 // @route   POST /api/url/shorten
 // @desc    Create short url object from submitted long url target
@@ -54,9 +55,18 @@ router.post('/delete', async (req, res) => {
   const url = new URL(entry.target);
   console.log('delete requested');
   console.log(url.hostname + url.pathname);
-  const deleted = await shortUrl.findOneAndDelete({ short: req.body.delete });
+  // const deleted = await shortUrl.findOneAndDelete({ short: req.body.delete });
+  const deleted = await shortUrl.findOne({ short: req.body.delete });
   console.log(deleted);
-  res.render('delete', { url });
+  res.render('delete', { entry });
+});
+
+// @route   DELETE /api/url/delete
+// @desc    Test delete method call of confirm delete button route
+
+router.delete('/delete/:url', async (req, res) => {
+  const { url } = req.params;
+  console.log(url);
 });
 
 // @route   POST /api/url/edit

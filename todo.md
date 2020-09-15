@@ -1,5 +1,6 @@
 # ideas for features
 
+* add delete button to edit view
 * restore just deleted item
 * parse input targets into urls
 * parse stored with URL()
