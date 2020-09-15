@@ -60,6 +60,15 @@ router.post('/delete/:url', async (req, res) => {
   res.render('delete', { entry });
 });
 
+// @route   GET /api/url/delete
+// @ desc   capture GET request to delete route
+
+router.get('/delete/:url', async (req, res) => {
+  console.log('GET /delete', req.params.url);
+  const entry = await shortUrl.findOne({ short: req.params.url });
+  res.render('delete', { entry });
+});
+
 // @route   DELETE /api/url/delete
 // @desc    Test delete method call of confirm delete button route
 

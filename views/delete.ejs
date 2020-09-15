@@ -18,7 +18,7 @@
   <p>short URL: <%= entry.short %></p>
   <a href="/">HOME</a>
   <form action="/api/url/delete/<%= entry.short %>?_method=DELETE" method="post">
-    <!-- <label for="updateShort">Update short URL code:</label> -->
+    <label>Please confirm:</label>
     <!-- <input type="text" name="updateShort" id="updateShort" value="<%= entry.short %>"/> -->
     Delete this item?
     <button class="button-primary" type="submit">Delete</button>
