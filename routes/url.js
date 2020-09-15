@@ -74,7 +74,7 @@ router.get('/delete/:url', async (req, res) => {
 
 router.delete('/delete/:url', async (req, res) => {
   const { url } = req.params;
-  console.log('deleteing', url);
+  console.log('deleting', url);
   const deleted = await shortUrl.findOneAndDelete({ short: url });
   res.redirect('/');
 });
@@ -94,10 +94,10 @@ router.post('/edit/:url', async (req, res) => {
 router.put('/edit/:url', async (req, res) => {
   console.log('update requested');
   console.log(req.params.url);
-  const { updateShort } = req.body;
-  console.log(updateShort);
+  const { updateTarget, updateShort } = req.body;
+  console.log(updateTarget, updateShort);
   let entry = await shortUrl.findOne({ short: updateShort });
-  if (entry) {
+  if (entry && updateShort === updateTarget) {
     console.log('in use');
     // TODO: need a message to user here that new short url is not available??
     console.log(entry);
@@ -105,6 +105,7 @@ router.put('/edit/:url', async (req, res) => {
   } else {
     console.log('available');
     entry = await shortUrl.findOne({ short: req.params.url });
+    entry.target = updateTarget;
     entry.short = updateShort;
     await entry.save();
     console.log('updated');

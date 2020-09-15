@@ -1,8 +1,6 @@
 # ideas for features
 
-* add delete button to edit view
-  * change /delete post route to use params
-  * pass short url as param to /delete post route
+* move create/update URL db entries to separate function
 * restore just deleted item
 * parse input targets into urls
 * parse stored with URL()
@@ -20,6 +18,9 @@
 
 ## in process
 
+* add delete button to edit view
+  * change /delete post route to use params
+  * pass short url as param to /delete post route
 * edit url and/or short url
 
 

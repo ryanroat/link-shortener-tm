@@ -21,9 +21,12 @@
     <label for="updateShort">Update short URL code:</label>
     <input type="text" name="updateShort" id="updateShort" value="<%= entry.short %>"/>
     <button class="button-primary" type="submit">Update</button>
-    <a href="/"><input class="button-primary" type="button" value="cancel"></a>
-    <a href="/api/url/delete/<%= entry.short %>"><button class="button-primary" type="button">Delete</button></a>
+    <label for="updateShort">Update target URL:</label>
+    <input type="text" name="updateTarget" id="updateTarget" value="<%= entry.target %>"/>
+    <button class="button-primary" type="submit">Update</button>
   </form>
+  <a href="/"><input class="button-primary" type="button" value="cancel"></a>
+  <a href="/api/url/delete/<%= entry.short %>"><button class="button-primary" type="button">Delete</button></a>
   <span class="message"></span>
   <script src="../../../js/darkmode.js"></script>
 </body>
