@@ -1,6 +1,8 @@
 # ideas for features
 
 * move create/update URL db entries to separate function
+* move all routing to url.js controller
+* separate api/server from front end
 * restore just deleted item
 * parse input targets into urls
 * parse stored with URL()
